@@ -7,7 +7,11 @@
 	<artifactId>houstat-app</artifactId>
 	<version>1.0</version>
 
-<!-- 	<packaging>war</packaging> -->
+	<packaging>jar</packaging>
+	
+	<name>houstat-app</name>
+	<description>Testproject for Spring Boot</description>
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
