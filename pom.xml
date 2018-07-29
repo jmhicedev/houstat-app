@@ -40,9 +40,8 @@
 			            </goals>
 			            <configuration>
 			                <classifier>spring-boot</classifier>
-			                <mainClass>
-			                  com.higuera.houstat.app.Application
-			                </mainClass>
+			                <mainClass>com.higuera.houstat.app.Application</mainClass>
+			                <layout>JAR</layout>
 			            </configuration>
 			        </execution>
 			    </executions>
