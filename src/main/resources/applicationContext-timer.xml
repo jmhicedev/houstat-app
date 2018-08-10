@@ -22,7 +22,7 @@
 	</bean>
 	<bean id="archieverJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="targetObject">
-			<ref bean="archieverJob" />
+			<ref bean="executorArchiverJob" />
 		</property>
 		<property name="targetMethod" value="execute" />
 		<property name="concurrent" value="false" />
