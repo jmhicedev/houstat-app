@@ -34,6 +34,9 @@ public class TaskExecution {
 	private Status status;
 	
 	
+	public TaskExecution(){ }
+	
+	
 	
 	/* Getters and Setters */
 	public Long getId() {

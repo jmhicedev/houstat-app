@@ -11,6 +11,9 @@
     
     <context:property-placeholder location="classpath:database.properties" />
     
-	<jpa:repositories base-package="com.higuera.houstat.repository.*" />
+    <context:component-scan base-package="com.higuera.houstat" />
+    <context:annotation-config />
+    
+	<jpa:repositories base-package="com.higuera.houstat.repository" />
 
 </beans>
