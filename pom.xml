@@ -81,9 +81,20 @@
 		    <artifactId>selenium-java</artifactId>
 		    <version>3.14.0</version>
 		</dependency>
-				
-				
 	</dependencies>
+	
+	<repositories>
+	    <repository>
+	        <id>mvn-repo</id>
+	        <url>https://github.com/jmhicedev/artifacts/master</url>
+	        <releases>
+	            <enabled>true</enabled>
+	        </releases>
+	        <snapshots>
+	            <enabled>true</enabled>
+	        </snapshots>
+	    </repository>
+	</repositories>
 	
 	<build>
 		<plugins>
