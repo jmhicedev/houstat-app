@@ -3,6 +3,7 @@ package com.higuera.houstat.app.web;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,9 @@ import com.higuera.houstat.repository.TaskExecutionRepository;
 @RestController
 public class HelloController {
 	
+	@Value("${openshift.message}")
+	private String stringValue;
+	
 	@Autowired(required=true)
 	TaskExecutionRepository taskExecutionRepository;
 	
@@ -22,15 +26,8 @@ public class HelloController {
     @RequestMapping("/hello")
     public String sayHello(){
     	
-    	TaskExecution te = new TaskExecution();
-    	te.setName("holaaa");
-    	try {
-    		taskExecutionRepository.save(te);
-    	} catch(Exception e) {
-    		e.printStackTrace();
-    	}
-    	
-        return ("Hello World!");
+//        return ("Hello World!");
+    	return stringValue;
     }
     
     @RequestMapping("/bye")
