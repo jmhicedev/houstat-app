@@ -2,7 +2,7 @@ package com.higuera.houstat.model.type;
 
 public enum MethodType {
 	
-	ARCHIVER("ARCHIVER");
+	ARCHIVER("ARCHIVER"), RETRIEVE_PICTURES("RETRIEVE_PICTURES");
 	
 	private String value;
 	

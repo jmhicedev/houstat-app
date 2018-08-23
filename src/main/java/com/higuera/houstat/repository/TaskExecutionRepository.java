@@ -1,12 +1,17 @@
 package com.higuera.houstat.repository;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 import com.higuera.houstat.model.TaskExecution;
+import com.higuera.houstat.model.TaskExecution.Status;
+import com.higuera.houstat.model.type.MethodType;
 
-//@Repository
 public interface TaskExecutionRepository extends CrudRepository<TaskExecution, Long> {
 
-	TaskExecution findByName(String name);
+	List<TaskExecution> findByNameContaining(String name);
+	
+	List<TaskExecution> findByMethodAndStatus(MethodType method, Status status);
+	
 }

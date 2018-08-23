@@ -9,11 +9,23 @@
     http://www.springframework.org/schema/data/jpa
     http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
     
-    <context:property-placeholder location="classpath:database.properties" />
+    <context:property-placeholder location="
+    	classpath:database.properties,
+    	classpath:idealista.properties" />
     
     <context:component-scan base-package="com.higuera.houstat" />
     <context:annotation-config />
     
 	<jpa:repositories base-package="com.higuera.houstat.repository" />
+	
+	<!-- Idealista Client beans -->
+<!-- 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" /> -->
+<!-- 	<bean id="authService" class="com.higuera.apiidealista.services.AuthServiceImpl" /> -->
+<!-- 	<bean id="searchService" class="com.higuera.apiidealista.services.SearchServiceImpl" /> -->
+
+	<bean id="idealistaClient" class="com.higuera.apiidealista.IdealistaClient">
+		<property name="apikey" value="${idealista.apikey}" />
+		<property name="secret" value="${idealista.secret}" />
+	</bean>
 
 </beans>

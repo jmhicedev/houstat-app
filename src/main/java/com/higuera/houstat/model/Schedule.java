@@ -2,6 +2,7 @@ package com.higuera.houstat.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -10,7 +11,8 @@ import com.higuera.houstat.model.type.MethodType;
 /**
  * It defines the generation of execution's tasks
  */
-public class ExecutionSchedule {
+@Entity
+public class Schedule {
 	
 	private @Id @GeneratedValue Long id;
 	
@@ -18,7 +20,7 @@ public class ExecutionSchedule {
 	
 	private MethodType method;
 	
-	private String properties;
+	private String parameters;
 	
 	private String cron;
 	
@@ -27,8 +29,10 @@ public class ExecutionSchedule {
 	private Date nextExecution;
 	
 	public enum ScheduleStatus { DISABLE, ENABLE };
-	private ScheduleStatus scheduleStatus;
+	private ScheduleStatus status;
 	
+	
+	public Schedule() {}
 	
 	
 	/* Getters and Setters */
@@ -50,11 +54,11 @@ public class ExecutionSchedule {
 	public void setMethod(MethodType method) {
 		this.method = method;
 	}
-	public String getProperties() {
-		return properties;
+	public String getParameters() {
+		return parameters;
 	}
-	public void setProperties(String properties) {
-		this.properties = properties;
+	public void setParameters(String parameters) {
+		this.parameters = parameters;
 	}
 	public String getCron() {
 		return cron;
@@ -68,11 +72,11 @@ public class ExecutionSchedule {
 	public void setLastExecution(Date lastExecution) {
 		this.lastExecution = lastExecution;
 	}
-	public ScheduleStatus getScheduleStatus() {
-		return scheduleStatus;
+	public ScheduleStatus getStatus() {
+		return status;
 	}
-	public void setScheduleStatus(ScheduleStatus scheduleStatus) {
-		this.scheduleStatus = scheduleStatus;
+	public void setStatus(ScheduleStatus status) {
+		this.status = status;
 	}
 	public Date getNextExecution() {
 		return nextExecution;
