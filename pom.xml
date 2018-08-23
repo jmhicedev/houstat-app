@@ -86,7 +86,7 @@
 	<repositories>
 	    <repository>
 	        <id>mvn-repo</id>
-	        <url>https://github.com/jmhicedev/artifacts/master</url>
+	        <url>https://github.com/jmhicedev/artifacts/tree/master</url>
 	        <releases>
 	            <enabled>true</enabled>
 	        </releases>
