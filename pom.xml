@@ -28,7 +28,7 @@
 		<dependency>
 			<groupId>com.higuera</groupId>
 			<artifactId>idealista-client</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
 		
 		<!-- web dependencies -->
