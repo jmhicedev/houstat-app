@@ -25,10 +25,18 @@
 	
 	<dependencies>
 		<!-- idealista dep -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.higuera</groupId> -->
+<!-- 			<artifactId>idealista-client</artifactId> -->
+<!-- 			<version>0.0.3-SNAPSHOT</version> -->
+<!-- 		</dependency> -->
+	
 		<dependency>
 			<groupId>com.higuera</groupId>
 			<artifactId>idealista-client</artifactId>
 			<version>0.0.3-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/lib/idealista-client-0.0.3-SNAPSHOT.jar</systemPath>
 		</dependency>
 		
 		<!-- web dependencies -->
