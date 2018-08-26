@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -31,6 +33,8 @@ import com.higuera.houstat.service.RealEstateService;
  * */
 @Component
 public class ExecutorArchiverJob {
+	
+	private static final Logger logger = LoggerFactory.getLogger(ExecutorArchiverJob.class);
 	
 	@Autowired
 	private TaskExecutionRepository taskExecutionRepository;
@@ -96,6 +100,8 @@ public class ExecutorArchiverJob {
 			eventRequests.setTask(task);
 			eventRepository.save(eventRequests);
 			
+			logger.info("REAL STATES ARCHIVED: " + counter);
+			logger.info("NUMBER OF REQUESTS: " + numRequests);
 		}
 		
 	}
