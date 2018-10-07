@@ -223,11 +223,6 @@ public class RealEstate {
 				return false;
 		} else if (!hasVideo.equals(other.hasVideo))
 			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
 		if (isSmookingAllowed == null) {
 			if (other.isSmookingAllowed != null)
 				return false;

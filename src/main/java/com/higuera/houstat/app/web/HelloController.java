@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,9 +17,6 @@ import com.higuera.houstat.repository.TaskExecutionRepository;
 @RestController
 public class HelloController {
 	
-	@Value("${openshift.message}")
-	private String stringValue;
-	
 	@Autowired(required=true)
 	TaskExecutionRepository taskExecutionRepository;
 	
@@ -29,9 +25,7 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String sayHello(){
-    	
-//        return ("Hello World!");
-    	return stringValue;
+        return ("Hello World!");
     }
     
     @RequestMapping("/bye")
@@ -44,7 +38,7 @@ public class HelloController {
     	TaskExecution task = new TaskExecution();
     	
     	task.setMethod(MethodType.ARCHIVER);
-    	task.setName("test task");
+    	task.setName("Test Sanse Rent");
     	task.setCreationDate(new Date());
     	task.setType(ExecutionType.MANUAL);
     	task.setStatus(Status.READY);

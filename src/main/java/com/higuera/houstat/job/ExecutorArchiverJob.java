@@ -59,13 +59,10 @@ public class ExecutorArchiverJob {
 			long counter = 0;
 			long numRequests = 0;
 			try {
-				GenericFilter filter = new GenericFilter();
 				Properties props = task.getProperties();
-				filter.setLocationId(LocationIdType.valueOf(props.getProperty("LocationId")));
-				filter.setPropertyType(PropertyTypeType.valueOf(props.getProperty("PropertyType")));
-				filter.setOperation(OperationType.valueOf(props.getProperty("Operation")));
-				filter.setSinceDate(SinceDateType.valueOf(props.getProperty("SinceDate")));
+				GenericFilter filter = new GenericFilter(props);
 				filter.setMaxItems(50);
+				filter.setNumPage(1);
 				SearchResponseDTO searchResponse = null;
 				do {
 					searchResponse = idealistaClient.search(filter);
@@ -75,6 +72,7 @@ public class ExecutorArchiverJob {
 						realEstateService.insertOrUpdate(realEstate);
 						counter++;
 					}
+					filter.setNumPage(filter.getNumPage()+1);
 				} while(searchResponse != null && searchResponse.getActualPage() < searchResponse.getTotalPages());
 				
 				task.setEndDate(new Date());
